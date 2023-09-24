@@ -2,7 +2,9 @@ package Application;
 
 import Connection.ConexaoBanco;
 import Model.Usuario;
-
+import com.mysql.cj.log.Log;
+import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.XSlf4j;
 
 
 public class Main {
@@ -13,8 +15,6 @@ public class Main {
 
         ConexaoBanco conexaoBanco = new ConexaoBanco();
         conexaoBanco.EntityManager(u2);
-
-        System.out.println("Pronto");
 
 
     }

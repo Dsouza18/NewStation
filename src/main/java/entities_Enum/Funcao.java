@@ -1,6 +1,6 @@
 package entities_Enum;
 
-public enum TipoUsuario {
+public enum Funcao {
     ADMINISTRADOR,
     FUNCIONARIO
 }
