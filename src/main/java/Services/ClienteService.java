@@ -1,18 +1,17 @@
 package Services;
 
-import Model.Usuario;
-
+import Model.Cliente;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class UsuarioService {
+public class ClienteService {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("teste");
 
-    public void cadastrarUsuario(Usuario usuario) {
+    public void cadastrarUsuario(Cliente cliente) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(usuario);
+        em.persist(cliente);
         em.getTransaction().commit();
         em.close();
     }

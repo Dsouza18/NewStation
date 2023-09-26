@@ -1,17 +1,22 @@
 package Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "cliente")
 public class Cliente {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column (name = "nome_cliente")
     private String nome;
+    @Column (name = "cpf_cliente")
     private Integer cpf;
+    @Column (name = "endereco_cliente")
     private String endereco;
-
+    @Column (name = "telefone_cliente")
     private String telefone;
+
 
     public Cliente(String nome, Integer cpf, String endereco, String telefone) {
         this.nome = nome;
@@ -19,7 +24,8 @@ public class Cliente {
         this.endereco = endereco;
         this.telefone = telefone;
     }
-
+    public Cliente() {
+    }
     public String getNome() {
         return nome;
     }
@@ -52,6 +58,14 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +
@@ -61,4 +75,5 @@ public class Cliente {
                 ", telefone='" + telefone + '\'' +
                 '}';
     }
+
 }

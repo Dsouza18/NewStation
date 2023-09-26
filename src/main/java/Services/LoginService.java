@@ -12,7 +12,7 @@ public class LoginService {
     private EntityManagerFactory emf;
 
     public void ServicoLogin() {
-        emf = Persistence.createEntityManagerFactory("MinhaUnidadeDePersistencia");
+        emf = Persistence.createEntityManagerFactory("teste");
     }
 
     public boolean validarCredenciais(String username, String password) {
@@ -24,14 +24,13 @@ public class LoginService {
             query.setParameter("username", username);
             query.setParameter("password", password);
 
-            // Execute a consulta
+            // Executa a consulta
             Usuario usuario = query.getSingleResult();
 
             // Se a consulta não lançar uma exceção, as credenciais são válidas
             return true;
         } catch (Exception e) {
 
-            // Trate qualquer exceção aqui (por exemplo, usuário não encontrado, erro de consulta, etc.)
             e.printStackTrace();
             return false;
         } finally {
@@ -39,6 +38,7 @@ public class LoginService {
         }
     }
     public void destroy() {
+
         emf.close();
     }
 }

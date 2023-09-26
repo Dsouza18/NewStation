@@ -1,44 +1,76 @@
 package Model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
-@Table (name = "produto")
+@Table(name = "produto")
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProduto;
-    private Long sku;
-    private String descricao;
+    private Long id;
+    @Column(name = "descricao_produto")
+    private String descricaoProduto;
+    @Column(name = "unidade_medida")
+    private String unidadeMedida;
+    @Column(name = "preco_unitario")
+    private Double precoUnitario;
+    @Column(name = "codigo_barras")
+    private Long codigoDeBarra;
 
-
-    public Produto(String descricao, long idProduto, long sku) {
-        this.descricao = descricao;
-        this.idProduto = idProduto;
-        this.sku = sku;
+    public Produto(Long id, String descricaoProduto, String unidadeMedida, Double precoUnitario, Long codigoDeBarra) {
+        this.id = id;
+        this.descricaoProduto = descricaoProduto;
+        this.unidadeMedida = unidadeMedida;
+        this.precoUnitario = precoUnitario;
+        this.codigoDeBarra = codigoDeBarra;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public Long getId() {
+
+        return id;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setId(Long id) {
+
+        this.id = id;
     }
 
-    public long getIdProduto() {
-        return idProduto;
+    public String getDescricaoProduto() {
+
+        return descricaoProduto;
     }
 
-    public void setIdProduto(long idProduto) {
-        this.idProduto = idProduto;
+    public void setDescricaoProduto(String descricaoProduto) {
+
+        this.descricaoProduto = descricaoProduto;
     }
 
-    public long getSku() {
-        return sku;
+    public String getUnidadeMedida() {
+
+        return unidadeMedida;
     }
 
-    public void setSku(long sku) {
-        this.sku = sku;
+    public void setUnidadeMedida(String unidadeMedida) {
+        this.unidadeMedida = unidadeMedida;
+    }
+
+    public Double getPrecoUnitario() {
+
+        return precoUnitario;
+    }
+
+    public void setPrecoUnitario(Double precoUnitario) {
+
+        this.precoUnitario = precoUnitario;
+    }
+
+    public Long getCodigoDeBarra() {
+
+        return codigoDeBarra;
+    }
+
+    public void setCodigoDeBarra(Long codigoDeBarra) {
+
+        this.codigoDeBarra = codigoDeBarra;
     }
 }
