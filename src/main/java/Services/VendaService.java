@@ -6,13 +6,13 @@ import Model.Cliente;
 import javax.persistence.Entity;
 
 @Entity
-public class Venda {
+public class VendaService {
 
     private Double precoDeVenda;
     private Produto produto;
     private Cliente cliente;
 
-    public Venda(Double precoDeVenda, Produto produto, Cliente cliente) {
+    public VendaService(Double precoDeVenda, Produto produto, Cliente cliente) {
         this.precoDeVenda = precoDeVenda;
         this.produto = produto;
         this.cliente = cliente;
