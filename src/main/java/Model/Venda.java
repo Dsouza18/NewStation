@@ -3,10 +3,7 @@ package Model;
 import jakarta.persistence.Column;
 
 import javax.lang.model.element.Name;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -20,6 +17,7 @@ public class Venda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "id_cliente")
+    @ManyToOne
     private Cliente cliente;
     @Column(name = "valor_pago")
     private BigDecimal valorPago;

@@ -2,6 +2,8 @@ package Model;
 
 import entities_Enum.Funcao;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -12,9 +14,10 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "usuario")
+@Getter
+@Setter
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "nome_usuario")
     private String login;
@@ -29,7 +32,6 @@ public class Usuario {
     public Usuario() {
 
     }
-
     public Usuario(Long id, String login, String senha, Funcao funcao, boolean estado, LocalDateTime dataHoraCriacao, LocalDateTime ultimoLogin) {
         this.id = id;
         this.login = login;
@@ -37,62 +39,6 @@ public class Usuario {
         this.funcao = funcao;
         this.estado = estado;
         this.dataHoraCriacao = dataHoraCriacao;
-        this.ultimoLogin = ultimoLogin;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public Funcao getFuncao() {
-        return funcao;
-    }
-
-    public void setFuncao(Funcao funcao) {
-        this.funcao = funcao;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-
-    public LocalDateTime getDataHoraCriacao() {
-        return dataHoraCriacao;
-    }
-
-    public void setDataHoraCriacao(LocalDateTime dataHoraCriacao) {
-        this.dataHoraCriacao = dataHoraCriacao;
-    }
-
-    public LocalDateTime getUltimoLogin() {
-        return ultimoLogin;
-    }
-
-    public void setUltimoLogin(LocalDateTime ultimoLogin) {
         this.ultimoLogin = ultimoLogin;
     }
 

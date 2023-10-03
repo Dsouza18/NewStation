@@ -8,9 +8,9 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "produto")
+
 public class Produto {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "descricao_produto")
     private String descricaoProduto;
@@ -20,9 +20,11 @@ public class Produto {
     private BigDecimal precoUnitario;
     @Column(name = "quantidade")
     private Integer quantidade;
-    @Column(name = "id_categoria")
+
+    @OneToOne
     private Categoria categoria;
-    @Column(name = "id_Usuario")
+
+    @OneToOne
     private Usuario usuario;
     @Column(name = "data_hora_criacao")
     private LocalDateTime dataHoraDeCriacao;

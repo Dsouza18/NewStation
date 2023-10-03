@@ -4,16 +4,18 @@ package Application;
 import Model.Usuario;
 import Services.UsuarioService;
 import entities_Enum.Funcao;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
 
-        Usuario usuario1 = new Usuario("teste", "123456", Funcao.ADMINISTRADOR);
-        UsuarioService us = new UsuarioService();
-        us.cadastrarUsuario(usuario1);
-        System.out.println("usuario cadastrado");
 
+        Model.Usuario usuario = new Model.Usuario();
+        usuario.setId(0L);
+        usuario.setLogin("teste3");
+        usuario.setSenha("010203");
+        usuario.setFuncao(Funcao.ADMINISTRADOR);
+        usuario.setEstado(true);
+
+        UsuarioService u1 = new UsuarioService();
+        u1.cadastrarUsuario(usuario);
     }
 }
