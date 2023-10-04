@@ -1,6 +1,10 @@
-package Model;
+package Produto;
 
+import Categoria.Categoria;
+import Usuario.Usuario;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -8,7 +12,8 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "produto")
-
+@Getter
+@Setter
 public class Produto {
     @Id
     private Long id;
@@ -20,10 +25,8 @@ public class Produto {
     private BigDecimal precoUnitario;
     @Column(name = "quantidade")
     private Integer quantidade;
-
     @OneToOne
     private Categoria categoria;
-
     @OneToOne
     private Usuario usuario;
     @Column(name = "data_hora_criacao")
@@ -31,7 +34,7 @@ public class Produto {
     @Column(name = "codigo_barras")
     private Long codigoDeBarra;
 
-    public Produto(){
+    public Produto() {
 
     }
 
@@ -47,78 +50,6 @@ public class Produto {
         this.codigoDeBarra = codigoDeBarra;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescricaoProduto() {
-        return descricaoProduto;
-    }
-
-    public void setDescricaoProduto(String descricaoProduto) {
-        this.descricaoProduto = descricaoProduto;
-    }
-
-    public String getUnidadeMedida() {
-        return unidadeMedida;
-    }
-
-    public void setUnidadeMedida(String unidadeMedida) {
-        this.unidadeMedida = unidadeMedida;
-    }
-
-    public BigDecimal getPrecoUnitario() {
-        return precoUnitario;
-    }
-
-    public void setPrecoUnitario(BigDecimal precoUnitario) {
-        this.precoUnitario = precoUnitario;
-    }
-
-    public Integer getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public LocalDateTime getDataHoraDeCriacao() {
-        return dataHoraDeCriacao;
-    }
-
-    public void setDataHoraDeCriacao(LocalDateTime dataHoraDeCriacao) {
-        this.dataHoraDeCriacao = dataHoraDeCriacao;
-    }
-
-    public Long getCodigoDeBarra() {
-        return codigoDeBarra;
-    }
-
-    public void setCodigoDeBarra(Long codigoDeBarra) {
-        this.codigoDeBarra = codigoDeBarra;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -131,6 +62,7 @@ public class Produto {
     public int hashCode() {
         return Objects.hash(id);
     }
+
     @Override
     public String toString() {
         return "Produto{" +
@@ -145,6 +77,5 @@ public class Produto {
                 ", codigoDeBarra=" + codigoDeBarra +
                 '}';
     }
-
 
 }

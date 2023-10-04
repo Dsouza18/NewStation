@@ -1,4 +1,4 @@
-package Model;
+package Categoria;
 
 import jakarta.persistence.*;
 import lombok.Getter;

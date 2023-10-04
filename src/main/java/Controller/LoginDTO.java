@@ -1,4 +1,4 @@
-package DTO;
+package Controller;
 
 public class LoginDTO {
 

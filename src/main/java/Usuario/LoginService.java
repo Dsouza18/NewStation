@@ -1,6 +1,6 @@
-package Services;
+package Usuario;
 
-import Model.Usuario;
+import Usuario.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

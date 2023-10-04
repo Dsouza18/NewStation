@@ -1,8 +1,9 @@
-package Model;
+package Venda;
 
+import Cliente.Cliente;
+import Usuario.Usuario;
 import jakarta.persistence.Column;
 
-import javax.lang.model.element.Name;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

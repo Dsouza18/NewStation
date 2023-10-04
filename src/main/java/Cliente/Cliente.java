@@ -1,11 +1,15 @@
-package Model;
+package Cliente;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "cliente")
+@Getter
+@Setter
 public class Cliente {
     @Id
     private Long id;
@@ -26,45 +30,6 @@ public class Cliente {
         this.telefone = telefone;
     }
     public Cliente() {
-    }
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Integer getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(Integer cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     @Override

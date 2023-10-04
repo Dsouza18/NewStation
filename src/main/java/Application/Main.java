@@ -1,21 +1,21 @@
 package Application;
 
 
-import Model.Usuario;
-import Services.UsuarioService;
+import Usuario.Usuario;
+import Usuario.UsuarioService;
 import entities_Enum.Funcao;
 public class Main {
     public static void main(String[] args) {
 
 
-        Model.Usuario usuario = new Model.Usuario();
+        Usuario usuario = new Usuario();
         usuario.setId(0L);
-        usuario.setLogin("teste3");
-        usuario.setSenha("010203");
-        usuario.setFuncao(Funcao.ADMINISTRADOR);
+        usuario.setLogin("teste2");
+        usuario.setSenha("123654");
+        usuario.setFuncao(Funcao.FUNCIONARIO);
         usuario.setEstado(true);
 
         UsuarioService u1 = new UsuarioService();
-        u1.cadastrarUsuario(usuario);
+        u1.excluirUsuario(usuario);
     }
 }

@@ -1,9 +1,6 @@
-package Services;
-
-import Model.Usuario;
+package Usuario;
 
 import jakarta.persistence.*;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.List;
@@ -70,7 +67,6 @@ public class UsuarioService {
 
         // Remove o usuário
         em.remove(usuario);
-
         em.getTransaction().commit();
         em.close();
         System.out.println("Usuário excluído com sucesso");
@@ -99,13 +95,10 @@ public class UsuarioService {
     }
 
     public List<Usuario> listarUsuarios() {
-
         EntityManager em = emf.createEntityManager();
         TypedQuery<Usuario> query = em.createQuery("SELECT * FROM Usuario", Usuario.class);
         List<Usuario> usuarios = query.getResultList();
         em.close();
         return usuarios;
     }
-
-
 }

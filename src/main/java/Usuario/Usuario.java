@@ -1,4 +1,4 @@
-package Model;
+package Usuario;
 
 import entities_Enum.Funcao;
 import jakarta.persistence.*;

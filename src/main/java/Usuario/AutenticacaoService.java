@@ -1,8 +1,7 @@
-package Services;
+package Usuario;
 
-import DTO.LoginDTO;
+import Controller.LoginDTO;
 import Exceptions.NegocioExpection;
-import Model.Usuario;
 import entities_Enum.Funcao;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
